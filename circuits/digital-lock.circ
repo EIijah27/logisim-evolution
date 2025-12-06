@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project source="Logisim-evolution">
+  <circuit name="main">
+    <!-- A simple 3-bit digital lock: UNLOCKED = A AND (NOT B) AND C -->
+    <comp loc="40 40" name="Pin">
+      <a name="label" val="A"/>
+      <a name="facing" val="east"/>
+      <a name="width" val="1"/>
+    </comp>
+
+    <comp loc="40 100" name="Pin">
+      <a name="label" val="B"/>
+      <a name="facing" val="east"/>
+      <a name="width" val="1"/>
+    </comp>
+
+    <comp loc="40 160" name="Pin">
+      <a name="label" val="C"/>
+      <a name="facing" val="east"/>
+      <a name="width" val="1"/>
+    </comp>
+
+    <!-- NOT gate for B -->
+    <comp loc="140 100" name="Not">
+      <a name="facing" val="east"/>
+    </comp>
+
+    <!-- AND gate (3 inputs). If the environment doesn't support a 3-input AND, use two 2-input ANDs instead. -->
+    <comp loc="260 100" name="And">
+      <a name="inputs" val="3"/>
+      <a name="facing" val="east"/>
+    </comp>
+
+    <!-- LED output -->
+    <comp loc="380 100" name="LED">
+      <a name="label" val="UNLOCKED"/>
+      <a name="facing" val="east"/>
+    </comp>
+
+    <!-- Wires (visual layout only) -->
+    <wire from="72 48" to="140 48"/>
+    <wire from="190 48" to="260 48"/>
+
+    <wire from="72 108" to="140 108"/>
+    <wire from="152 108" to="152 92"/>
+    <wire from="152 92" to="190 92"/>
+    <wire from="190 92" to="260 92"/>
+
+    <wire from="72 168" to="260 168"/>
+
+    <wire from="292 100" to="380 100"/>
+
+    <!-- Note: Logisim-evolution may store more attributes; this file is a minimal illustrative circuit that should load in Logisim-evolution where component names match. -->
+  </circuit>
+</project>

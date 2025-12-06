@@ -35,7 +35,7 @@
       <a name="facing" val="east"/>
     </comp>
 
-    <!-- Wires (visual layout only) -->
+    <!-- Wires -->
     <wire from="72 48" to="140 48"/>
     <wire from="190 48" to="260 48"/>
 
